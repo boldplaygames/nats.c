@@ -108,7 +108,7 @@ natsLib_Destructor(void)
 static void
 _freeLib(void)
 {
-    const unsigned int offset = (unsigned int)offsetof(natsLib, refs);
+    const unsigned int offset = (unsigned int)__builtin_offsetof(natsLib, refs);
     bool callFinalCleanup = false;
 
     nats_freeTimers(&gLib);
